@@ -3,3 +3,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user_custom_i18n:
+          attributes:
+            rut:
+              rut_invalid: "Rut cannot be blank"

@@ -38,6 +38,29 @@ If you want to validate a single string:
     "7654764-8".rut_valid?
     => false
 
+If you want to use custom I18n translations you need to set the attribute validation in the model like:
+
+```ruby
+class User < ActiveRecord::Base
+  attr_accessible :rut
+
+  validates :rut, :rut => { :message => :rut_invalid }
+end
+```
+
+And in your locales file (en.yml for example):
+
+```yaml
+en:
+  activerecord:
+    errors:
+      models:
+        user_custom_i18n:
+          attributes:
+            rut:
+              rut_invalid: "Rut cannot be blank"
+```
+
 ## Contributing
 
 1. Fork it

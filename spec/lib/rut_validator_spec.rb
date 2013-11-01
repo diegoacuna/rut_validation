@@ -19,4 +19,20 @@ describe User do
     user.rut = "16329351.-K"
     user.should_not be_valid
   end
+  
+  it "should contain default error message 'is not a valid rut'" do
+    user.rut = "7654764-8"
+    user.valid?
+    user.errors[:rut].should include('is not a valid rut')
+  end
+end
+
+describe UserCustomI18n do
+  user = UserCustomI18n.new
+  
+  it "should contain customized error message 'Rut cannot be blank'" do
+    user.rut = "7654764-8"
+    user.valid?
+    user.errors[:rut].should include('Rut cannot be blank')
+  end
 end
