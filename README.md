@@ -55,7 +55,7 @@ en:
   activerecord:
     errors:
       models:
-        user_custom_i18n:
+        user:
           attributes:
             rut:
               rut_invalid: "Rut cannot be blank"
